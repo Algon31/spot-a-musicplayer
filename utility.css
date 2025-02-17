@@ -1,0 +1,26 @@
+.bg{
+    background: red;
+}
+.flexy{
+    display: flex;
+}
+.flexy-c{
+    justify-content: center;
+}
+.flexy-a{
+    align-items: center;
+}
+.flexy-e{
+    justify-content: end;
+}
+.flexy-sb{
+    justify-content: space-between;
+}
+.artists::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+}
+
+.artists::-webkit-scrollbar-thumb {
+    background-color: #444; /* dark grey for the scrollbar thumb */
+    border-radius: 4px;
+}
