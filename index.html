@@ -7,17 +7,15 @@
     <title>Spot</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/utility.css">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
 
 <body>
     <nav class="flexy flexy-a">
-
-        <div class="logo flexy flexy-c fl">
-            <img src="/assests/svgs/spotify-logo.svg" alt="">
-        </div>
+        <img class="logo" src="/assests/svgs/spotify-logo.svg" alt="">
         <div class="right-nav flexy flexy-sb flexy-a">
             <div class="search-bar flexy flexy-c flexy-a">
-                <img src="/assests/svgs/home-logo.svg" alt="">
+                <img class="home-ic" src="/assests/svgs/home-logo.svg" alt="">
                 <input type="text">
             </div>
             <div class="others-nav flexy flexy-a flexy-e">
@@ -28,9 +26,9 @@
 
                 </div>
                 |
-                <div class="logins three-nav">
-                    <a href="">Install App</a>
-                    <a href="">Sign up</a>
+                <div class="logins">
+                    <a href="#">Install App</a>
+                    <a href="#">Sign up</a>
                     <button>Log in</button>
                 </div>
             </div>
@@ -40,7 +38,7 @@
 
 
     <div class="body1 flexy ">
-        <div class="leftt">
+        <div class="leftt posi-r">
 
             <h3 class="flexy flexy-a flexy-sb">
                 <div class="lib flexy flexy-a flexy-c">
@@ -48,18 +46,26 @@
                     <img src="/assests/svgs/library.svg" alt="">
                     Library
                 </div>
-                <img cla src="/assests/svgs/plus.svg" alt="">
+                <img src="/assests/svgs/plus.svg" alt="">
             </h3>
+            <div class="songlist">
+                <ul>
+
+                </ul>
+            </div>
+            <div class="me posi-a">
+                rgkvfkru
+            </div>
 
 
         </div>
-        <div class="rightt">
-            <div class="pop_artists">
+        <div class="rightt posi-r">
+            <div class="pop_artists ">
                 <div class="flexy flexy-a flexy-sb">
                     <h3>Popular artists</h3>
-                    <p>show more</p>
+                    <img class="plus" src="/assests/svgs/plus.svg" alt="">
                 </div>
-                <div class="artists flexy ">
+                <div class="artists flexy flexy-a flexy-c">
                     <div class="artist flexy flexy-c">
                         <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
                         <img class="pic-play" src="/assests/svgs/play.svg" alt="">
@@ -96,71 +102,24 @@
                         <p>Artist</p>
 
                     </div>
-                    <div class="artist flexy flexy-c">
-                        <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
-                        <img class="pic-play" src="/assests/svgs/play.svg" alt="">
 
-                        <span> Pritam</span>
-                        <p>Artist</p>
 
-                    </div>
-                    <div class="artist flexy flexy-c">
-                        <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
-                        <img class="pic-play" src="/assests/svgs/play.svg" alt="">
-
-                        <span> Pritam</span>
-                        <p>Artist</p>
-
-                    </div>
-                    <div class="artist flexy flexy-c">
-                        <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
-                        <img class="pic-play" src="/assests/svgs/play.svg" alt="">
-
-                        <span> Pritam</span>
-                        <p>Artist</p>
-
-                    </div>
-                    <div class="artist flexy flexy-c">
-                        <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
-                        <img class="pic-play" src="/assests/svgs/play.svg" alt="">
-
-                        <span> Pritam</span>
-                        <p>Artist</p>
-
-                    </div>
-                    <div class="artist flexy flexy-c">
-                        <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
-                        <img class="pic-play" src="/assests/svgs/play.svg" alt="">
-
-                        <span> Pritam</span>
-                        <p>Artist</p>
-
-                    </div>
-                    <div class="artist flexy flexy-c">
-                        <img class="pic" src="/assests/imgs/pritam.jpeg" alt="">
-                        <img class="pic-play" src="/assests/svgs/play.svg" alt="">
-
-                        <span> Pritam</span>
-                        <p>Artist</p>
-
+                </div>
+            </div>
+            <div class="playing posi-a flexy flexy-c flexy-a ">
+                <div class="seekbar posi-a">
+                    <div class="scircle">
                     </div>
                 </div>
+                <div class="info flexy flexy-a flexy-c">
 
+                    <div id="imgs" class="imgs flexy flexy-a ">
+                        <img id="prev" class="prev posi-r" src="/assests/svgs/previous.svg" alt="play">
+                        <img id="play" class="playingbtn posi-r" src="/assests/svgs/play.svg" alt="play">
+                        <img id="next" class="nxt posi-r" src="/assests/svgs/next.svg" alt="play">
+                    </div>
 
-
-
-
-
-
-            </div>
-            <div class="pop-albums">
-
-            </div>
-            <div class="pop-radio">
-
-            </div>
-            <div class="featured">
-
+                </div>
             </div>
 
 

@@ -22,24 +22,25 @@ nav{
     box-sizing: border-box;
     padding-top: 10px;
 }
-nav img{
-    /* margin: 0.2em; */
+.home-ic{
     width: 25px;
     padding: 0.7em;
     background: var(--grey);
     border-radius: 1.3em;
     border: none;
 }
-nav .logo{
+.logo{
     object-fit: cover;
     border-radius: 1.3em;
     border-radius: 2em;
     margin: 0em 1.2em 0em 1.2em;
-}
-nav .logo img{
     background: black;
     width: 30px;
     rotate: 5deg;
+    transition: transform 1s ease;
+}
+.logo:hover{
+    transform: rotate(360deg) scale(1.1);
 }
 nav input{
     border: none;
@@ -59,8 +60,26 @@ nav input{
 .three-nav a{
     padding-right: 1.5em;
     text-decoration: none;
-    
+    transition: transform 1s ease-in-out;
 
+}
+.three-nav a:hover{
+    filter: brightness(20);
+    transform: scale(1.1);
+    
+}
+.logins a{
+    margin: 0 15px;
+    font-size: 17px;
+    text-decoration: none;
+    filter: blur(90) ;
+   
+    transition: transform 1s ease-in;
+    transform-origin: center;
+
+}
+.logins a:hover{
+    filter: brightness(20);
 }
 .logins button{
     width: 8em;
@@ -70,28 +89,26 @@ nav input{
     border-radius: 5em;
     font-weight: 900;
     cursor: pointer;
-}
-.logins{
-    margin: 0em 1em 0em 2em;
+    transition: transform 0.5s ease;
 
 }
-
+.logins button:hover{
+    transform: scale(1.1);
+}
 .body1{
     box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
 }
 .body1 > *{
     margin: 5px;    
     background: var(--grey);
-    height: 80vh;
+    height: 88vh;
     border: none;
     border-radius: 5px;
 }
 .leftt{
-    width: 35%;
-}
-.rightt{
-    width: 65%;
+    width: 35vw;
+    /* height: 80vh; */
 }
 .leftt h3{
     margin: 10px 10px;
@@ -102,38 +119,97 @@ nav input{
 .lib{
     gap: 10px;
 }
+.songlist{
+    padding: 10px 30px 10px 30px;
+
+}
+
+.songlist ul{
+    list-style: none;
+    overflow-y: auto;
+    height: 450px;
+}
+.songlist ul > *{
+    padding: 10px;
+    display: flex;
+}
+.songlist ul li{
+    border: none;
+    margin: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 2s ease-in-out;
+}
+.songlist ul li:hover{
+
+    background: rgb(41, 41, 41);
+
+}
+.songlist ul li img{
+    border-radius: 10px;
+}
+
+.name > *{
+    padding: 2px 30px;
+}
+.songName{
+    font-size: 20px;
+}
+.artiyName{
+    font-size: 10px;
+}
+.me{
+    width: 100%;
+    height: 125px;
+    background:  #E8ECD6;
+    color: #B75A48;
+    bottom: 0;
+
+}
+
+
+
+
+
+/* -------------rightt div ------------------ */
+.rightt{
+    width:65vw;
+}
 .rightt > *{
-    margin: 20px;
-    height: auto;
+    padding: 20px;
+}
+.plus{
+    width: 30px;
+}
+.pop_artists{
+    width: 60vw;
+    height: 80vh;
 }
 .artists{
     flex-wrap: wrap;
     margin: 10px;
-    width: 60vw;
-    height: 500px; /* set a height that works for your layout */
-    overflow-y: auto; /* enables vertical scrolling if content overflows */
+    height: 60vh;
+    overflow-x: auto;
     background-color: #1a1a1a;
     border: none;
     border-radius: 5px;
-    justify-content: center;
-    /* align-items:flex-start ; */
-    /* align-content:center; */
+}
+.artists > *{
+    margin: 10px 20px;
+    
+    padding: 5px;
 }
 .artist{
     flex-direction: column;
     padding: 15px;
     border: none;
     border-radius: 8px;
-    /* background: #2e2e2e; */
-    background: #00000000;
+    background: #2e2e2e;
     position: relative;
 
 }
-.artist *{
-    padding: 5px;
-}
 .pic{
-    width: 135px;
+    width: 120px;
     border-radius: 75px;
 }
 .pic-play{
@@ -145,4 +221,49 @@ nav input{
 }
 .artist p{
     font-size: 10px;
+}
+.playing{
+    bottom: 0;
+    right: 0;
+    width: 945px;
+    height: 7vh;
+    background: #303030;
+    border-radius: 5px;
+}
+.seekbar{
+    width: 100%;
+    height: 2px;
+    background: green;
+    top: 0;
+}
+.scircle{
+    width: 10px;
+    background: green;
+    height: 10px;
+    position: absolute;
+    top: -4px;
+    left: 0%;
+    border: none;
+    border-radius: 5px;
+    transition: left;
+}
+.playingbtn{
+    
+    width: 75px;
+    cursor: pointer;
+}
+.nxt{
+    margin: 0 10px;
+    width: 50px;
+}
+.prev{
+    margin: 0 10px;
+    width: 50px;
+}
+.info{
+    padding:0 40px;
+    width: 100%;
+}
+.cName,.time{
+    /* padding: 0 10px; */
 }
