@@ -224,8 +224,7 @@ nav input{
 }
 .playing{
     bottom: 0;
-    right: 0;
-    width: 945px;
+    width: 946px;
     height: 7vh;
     background: #303030;
     border-radius: 5px;
@@ -235,18 +234,28 @@ nav input{
     height: 2px;
     background: green;
     top: 0;
+    cursor: pointer;
 }
-.scircle{
-    width: 10px;
+.seekbar:hover{
+    height: 4px;
+    top: -1px;
+}
+.sCircle{
+    width: 12px;
     background: green;
-    height: 10px;
-    position: absolute;
+    height: 12px;
     top: -4px;
     left: 0%;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: left;
+    transform: transition 1s ease-in-out;
 }
+/* .sCircle:hover{
+    width: 15px;
+    height: 15px;
+    top: -6px;
+} */
 .playingbtn{
     
     width: 75px;
@@ -261,9 +270,14 @@ nav input{
     width: 50px;
 }
 .info{
-    padding:0 40px;
+    padding:0 10px;
     width: 100%;
 }
-.cName,.time{
-    /* padding: 0 10px; */
+.sName{
+    width: 35%;
+    text-align: left;
+}
+.sTime{
+    width: 35%;
+    text-align: right;
 }
