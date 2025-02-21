@@ -27,11 +27,11 @@
     background-color: #444; /* dark grey for the scrollbar thumb */
     border-radius: 4px;
 }
-.songlist ul::-webkit-scrollbar {
+.songlist::-webkit-scrollbar {
     width: 8px; /* width of the scrollbar */
 }
 
-.songlist ul::-webkit-scrollbar-thumb {
+.songlist::-webkit-scrollbar-thumb {
     background-color: #444; /* dark grey for the scrollbar thumb */
     border-radius: 4px;
 }

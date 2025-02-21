@@ -4,6 +4,7 @@
 }
 :root{
     --grey: #121212;
+    --ani: 0;
 }
 *{
     padding: 0;
@@ -12,11 +13,13 @@
     font-family: "spotify",sans-serif;
     
 }
-body{
-    background: #000;
+html, body {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    background: #000;
 }
+
 nav{
     width: 100%;
     box-sizing: border-box;
@@ -59,6 +62,7 @@ nav input{
 }
 .three-nav a{
     padding-right: 1.5em;
+    display: visible;
     text-decoration: none;
     transition: transform 1s ease-in-out;
 
@@ -73,12 +77,12 @@ nav input{
     font-size: 17px;
     text-decoration: none;
     filter: blur(90) ;
-   
     transition: transform 1s ease-in;
     transform-origin: center;
 
 }
 .logins a:hover{
+    transform: scale(1.5);
     filter: brightness(20);
 }
 .logins button{
@@ -86,6 +90,7 @@ nav input{
     height: 4em;
     background: white;
     color: black;
+    border: none;
     border-radius: 5em;
     font-weight: 900;
     cursor: pointer;
@@ -108,6 +113,7 @@ nav input{
 }
 .leftt{
     width: 35vw;
+    left: 0%;
     /* height: 80vh; */
 }
 .leftt h3{
@@ -121,12 +127,12 @@ nav input{
 }
 .songlist{
     padding: 10px 30px 10px 30px;
-
+    overflow-y: auto;
+    height:  65vh;
 }
 
 .songlist ul{
     list-style: none;
-    overflow-y: auto;
     height: 450px;
 }
 .songlist ul > *{
@@ -158,14 +164,6 @@ nav input{
 .artiyName{
     font-size: 10px;
 }
-.me{
-    width: 100%;
-    height: 125px;
-    background:  #E8ECD6;
-    color: #B75A48;
-    bottom: 0;
-
-}
 
 
 
@@ -175,20 +173,22 @@ nav input{
 .rightt{
     width:65vw;
 }
-.rightt > *{
-    padding: 20px;
+.pop_artists{
+    padding: 10px;
 }
 .plus{
     width: 30px;
 }
-.pop_artists{
-    width: 60vw;
-    height: 80vh;
+.pop-artists-title{
+    width: 97%;
+    padding: 10px 0;
 }
 .artists{
     flex-wrap: wrap;
-    margin: 10px;
-    height: 60vh;
+    margin: 0;
+    width: 95%;
+    height: 32vh;
+    flex-direction: column;
     overflow-x: auto;
     background-color: #1a1a1a;
     border: none;
@@ -206,8 +206,9 @@ nav input{
     border-radius: 8px;
     background: #2e2e2e;
     position: relative;
-
+    cursor: pointer;
 }
+
 .pic{
     width: 120px;
     border-radius: 75px;
@@ -216,18 +217,25 @@ nav input{
     position: absolute;
     bottom: -12px;
     right: 10px;
-    width: 65px;
-    opacity: 0;
+    width: 50px;
+    opacity: var(--ani);
+    transition: bottom 0.5s ease-in-out;
+}
+.artist:hover{
+    --a:100;
 }
 .artist p{
     font-size: 10px;
 }
 .playing{
     bottom: 0;
-    width: 946px;
-    height: 7vh;
+    width: 100%;
+    height: 12vh;
     background: #303030;
-    border-radius: 5px;
+    border-radius: 0;
+    position: fixed;
+    margin: 0;
+    z-index: 1;
 }
 .seekbar{
     width: 100%;
@@ -235,9 +243,11 @@ nav input{
     background: green;
     top: 0;
     cursor: pointer;
+    transition: height 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
 }
 .seekbar:hover{
-    height: 4px;
+    height: 3px;
     top: -1px;
 }
 .sCircle{
@@ -249,23 +259,20 @@ nav input{
     border: none;
     border-radius: 8px;
     transition: left;
-    transform: transition 1s ease-in-out;
+    transition: left 0.3s linear;
 }
-/* .sCircle:hover{
-    width: 15px;
-    height: 15px;
-    top: -6px;
-} */
 .playingbtn{
     
     width: 75px;
     cursor: pointer;
 }
 .nxt{
+    cursor: pointer;
     margin: 0 10px;
     width: 50px;
 }
 .prev{
+    cursor: pointer;
     margin: 0 10px;
     width: 50px;
 }
@@ -277,7 +284,27 @@ nav input{
     width: 35%;
     text-align: left;
 }
-.sTime{
+.snt{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+    gap: 40px;
     width: 35%;
-    text-align: right;
 }
+.snt img{
+    width: 30px;
+}
+.snt input{
+    width: 100px;
+}
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styles */
+    width: 100%;
+    height: 8px;
+    background: rgb(143, 143, 143);
+    border-radius: 5px;
+    outline: none;
+}
+
+  

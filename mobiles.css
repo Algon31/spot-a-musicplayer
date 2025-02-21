@@ -1,0 +1,95 @@
+@media (max-width: 768px) {
+    nav{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .logo{
+        width: 34px;
+    }
+
+    .home-ic{
+        display: none;
+    }
+    .search-bar input{
+        display: none;
+    }
+    .three-nav{
+        display: none;
+        margin: 0;
+    }
+    .others-nav{
+        margin: 0;
+    }
+    .logins a{
+        display: none;
+    }
+    .logins button{
+        width: 70px;
+        height: 40px;
+        margin-right: 10px;
+
+    }
+    .leftt{
+        position: absolute;
+        z-index: 1;
+        left: -100%;
+        width: 100vw;
+        margin: 0;
+        transition : left 0.5s ease-in-out;
+    }
+    .songlist{
+        height: 65vh
+    }
+    .rightt{
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+        bottom: 0;
+        height: 100vh;
+    }
+
+    .artist .pic{
+        width: 100px;
+    }
+    .invert{
+        filter: invert(1);
+    }
+    .logo{
+        width: 30px;
+    }
+    .playing{
+        border-radius: 0;
+    }
+    .playingbtn{
+        width: 40px;
+    }
+    .nxt{
+        margin: 0 10px;
+        width: 30px;
+    }
+    .prev{
+        margin: 0 10px;
+        width: 30px;
+    }
+    .sName{
+        font-size: 10px;
+    }
+    .sTime{
+        font-size: 8px;
+        width: 50%;
+    }
+    .snt img{
+        display: none;
+    }
+    .snt input{
+        display: none;
+        background: white;
+    }
+    
+
+
+
+
+
+}

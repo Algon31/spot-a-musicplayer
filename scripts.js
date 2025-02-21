@@ -1,4 +1,5 @@
 let currentsong = new Audio();
+let songs;
 
 
 
@@ -68,7 +69,7 @@ const playMusic = (x)=>{
 // ---------------this is where  it strats i guess------------------------
 async function main() {
 
-    let songs = await get_songs();// waiting till the songs are fetched
+    songs = await get_songs();// waiting till the songs are fetched
     // console.log(songs);
     let sul = document.querySelector(".songlist").getElementsByTagName("ul")[0]; // setting to location of songs to be put
 
@@ -94,25 +95,6 @@ async function main() {
             // console.log(tracky.trim()+".mp3");
             playMusic(tracky.trim()+".mp3"); // uploding the song with .mp for searching purpuse
             document.querySelector(".sName").innerHTML = `<div>${tracky.split(" - ")[0]} - ${tracky.split("- ")[1]} <div> `;
-            // document.querySelector(".sTime").innerHTML = ` ${currentsong.currentTime} / ${currentsong.duration} `;
-
-
-
-
-            // let cplaying = document.createElement("div");
-            // cplaying.setAttribute("class","cName");
-            // let cplaying2 = document.createElement("div");
-            // cplaying2.setAttribute("class","time")
-            // cplaying.innerHTML = `${tracky.split(" - ")[0]} - ${tracky.split("- ")[1]}`;
-            // let sName = document.querySelector(".imgs");
-
-            // cplaying2.innerHTML = `
-            // 00:00/00:00
-            // `;
-            // document.querySelectorAll(".cName, .time").forEach(el => el.remove());
-            // // sName.before(cplaying)
-            // // sName.after(cplaying2)
-            // document.getElementById("imgs").setAttribute("flexy-sb");
         })
     })
  //   if clicked then playing the song
@@ -126,11 +108,36 @@ async function main() {
             play.src= "/assests/svgs/play.svg";
         }
     })
-    prev.addEventListener("clcik", ()=>{
 
+
+    next.addEventListener("click", ()=>{
+        console.log(songs);
+            let curS = currentsong.src.split("/").splice(-1)[0].replaceAll("%20"," ").split(".")[0];
+            let index = songs.indexOf(curS)
+            if(index+1 > songs.length-1){
+                // currentsong.src = "/assests/songs/"+songs[0].toLowerCase()+".mp3";
+            }
+            else{
+
+                playMusic(songs[index+1]+".mp3");
+                document.querySelector(".sName").innerHTML = songs[index+1];
+            }
     })
-// -------------------updates times accordinglyy-----------
-    currentsong.addEventListener("timeupdate", ()=>{
+    prev.addEventListener("click", ()=>{
+        console.log(songs);
+            let curS = currentsong.src.split("/").splice(-1)[0].replaceAll("%20"," ").split(".")[0];
+            let index = songs.indexOf(curS)
+            if(index+1 >= 2){
+                // currentsong.src = "/assests/songs/"+songs[0].toLowerCase()+".mp3";
+                playMusic(songs[index-1]+".mp3");
+                document.querySelector(".sName").innerHTML = songs[index-1];
+            }
+        })
+        
+        
+        
+        // -------------------updates times accordinglyy-----------
+        currentsong.addEventListener("timeupdate", ()=>{
             if(currentsong.currentTime == currentsong.duration){
                 play.src= "/assests/svgs/play.svg";
             }
@@ -155,7 +162,39 @@ async function main() {
         }
     }
     seek.addEventListener("click",e=>{
-        console.log(e);
+        let percent = (e.offsetX/e.target.getBoundingClientRect().width)*99;
+        sCircle.style.left = percent + "%";
+        currentsong.currentTime = ((currentsong.duration)*percent) /99;
     })
+
+    let logo = document.querySelector(".logo");
+    if(window.matchMedia("(max-width: 768px)").matches){
+            logo.src = "/assests/svgs/ham.svg";
+            let x = document.createElement("div");
+            x.innerHTML = `
+            songs `;
+            logo.after(x);
+            logo.addEventListener("click",function () {
+                let leftt = document.querySelector(".leftt");
+                document.querySelector(".artists").style.flexDirection = "column";
+
+                if(leftt.style.left == "0%"){
+                    leftt.style.left = "-100%";
+                }
+                else{
+                    leftt.style.left = "0%";
+                }
+            })
+        }
+        else{
+            logo.src = "/assests/svgs/spotify-logo.svg";
+
+        }
+        input.addEventListener("change",(e)=>{
+            currentsong.volume = e.target.value/100;
+            // console.log(e.target.value);
+
+        })
 }
+
 main();
