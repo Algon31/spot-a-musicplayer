@@ -19,23 +19,14 @@
 .flexy-sb{
     justify-content: space-between;
 }
-.artists::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 8px; /* width of the scrollbar */
 }
 
-.artists::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #444; /* dark grey for the scrollbar thumb */
     border-radius: 4px;
 }
-.songlist::-webkit-scrollbar {
-    width: 8px; /* width of the scrollbar */
-}
-
-.songlist::-webkit-scrollbar-thumb {
-    background-color: #444; /* dark grey for the scrollbar thumb */
-    border-radius: 4px;
-}
-
 .posi-r{
     position: relative;
 }

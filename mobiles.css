@@ -49,7 +49,10 @@
         height: 100vh;
     }
 
-    .artist .pic{
+    .playList, .favSongs .pic{
+        width: 100px;
+    }
+    .playList .pic{
         width: 100px;
     }
     .invert{
