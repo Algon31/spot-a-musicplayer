@@ -33,7 +33,7 @@ function sectotime(sec) {
 // ---------------------------getting songs for list------------------------------------
 async function get_playlist(playlist) {
     currentplaylist = playlist;
-    let api = await fetch(`${window.location.origin}/assests/playlist/${playlist}`);
+    let api = await fetch(`https://raw.githubusercontent.com/USERNAME/REPOSITORY/BRANCH/assests/playlist/${playlist}`);
     let resource = await api.text();
     let div = document.createElement("div");
     div.innerHTML = resource;
@@ -73,7 +73,7 @@ async function get_playlist(playlist) {
 }
 // load playlist from the folder playlists
 async function loadplaylist() {
-    let a = await fetch(`${window.location.origin}/assests/playlist/`);
+    let a = await fetch(`https://raw.githubusercontent.com/USERNAME/REPOSITORY/BRANCH/assests/playlist/`);
     let res = await a.text();
     let div = document.createElement("div");
     div.innerHTML = res;
@@ -81,7 +81,7 @@ async function loadplaylist() {
     Array.from(ancors).forEach(async e => {
         if (e.href.includes("/assests/playlist/")) {
             let folder = e.href.split("playlist/")[1];
-            let files = await fetch(`${window.location.origin}/assests/playlist/${folder}/info.json`);
+            let files = await fetch(`https://raw.githubusercontent.com/USERNAME/REPOSITORY/BRANCH/assests/playlist/${folder}/info.json`);
             let resource = await files.json();
             let playLists = document.querySelector(".playLists")
             playLists.innerHTML = playLists.innerHTML + `
