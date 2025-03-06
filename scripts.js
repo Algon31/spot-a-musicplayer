@@ -34,6 +34,8 @@ function sectotime(sec) {
 async function get_playlist(playlist) {
     currentplaylist = playlist;
     let api = await fetch(`/assests/playlist/${playlist}`);
+    console.log(api);
+    console.log(typeof api);
     let resource = await api.text();
     let div = document.createElement("div");
     div.innerHTML = resource;
